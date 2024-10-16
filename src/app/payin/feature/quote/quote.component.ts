@@ -86,7 +86,6 @@ export class QuoteComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.cartEventService.cartCreated$.subscribe((cart) => {
         if (isEmptyObject(cart)) {
-          console.log('Cart is empty');
           this.router.navigate(['/']);
           return;
         }
@@ -108,7 +107,6 @@ export class QuoteComponent implements OnInit, OnDestroy {
     try {
       this.showLoading('Cargando cotización');
       this.quote = await this.fetchQuoteUseCase.execute(quoteToSend);
-      console.log(this.quote);
       this.setFormValues();
       this.resetTimer();
       Swal.close();
@@ -143,8 +141,8 @@ export class QuoteComponent implements OnInit, OnDestroy {
       Swal.close();
       window.location.href = response.paymentLink;
     } catch (error) {
-        console.log(error);
-      }
+        Swal.fire('Error', 'Ocurrió un error al iniciar el proceso de pago', 'error');
+    }
     }
   }
 

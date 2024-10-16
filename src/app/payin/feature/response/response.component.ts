@@ -29,7 +29,6 @@ export class ResponseComponent {
     const data = readObjectFromBase64('paymentInfo') as PaymentInfo;
     if (data) {
       const {payment, balance} = await this.getPaymentStatus.execute(data.id);
-      console.log(payment, balance);
       if(payment.status ===  PaymentStatus.PAID){
         Swal.fire('Pago exitoso', 'Tu pago se ha procesado de manera exitosa', 'success');
         this.balanceInfo = balance;

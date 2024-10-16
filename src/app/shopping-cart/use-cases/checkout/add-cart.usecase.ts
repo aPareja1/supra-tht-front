@@ -34,7 +34,6 @@ export class CreateCartUseCase implements UseCase<AddCartDto, Observable<AddCart
     }
 
     if (cart) {
-      console.log('Cart has been created!');
       return cart.domainObserver;
     }
 

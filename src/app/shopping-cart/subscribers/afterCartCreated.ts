@@ -11,12 +11,7 @@ import { tap, map } from 'rxjs/operators';
 export class AfterCartCreated implements IHandle{
   private cartCreatedSubject = new Subject<void>();
 
-  style = `
-    font-weight: bold;
-    font-size: 30px;
-    color: green;
-    text-shadow: 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;
-  `;
+
 
   get cartCreated$(): Observable<void> {
     return this.cartCreatedSubject.asObservable();
@@ -25,7 +20,6 @@ export class AfterCartCreated implements IHandle{
   onPipe(): UnaryFunction<any, any> {
     return pipe(
       tap(() => {
-        console.log('%c Cart has been created!', this.style);
         this.cartCreatedSubject.next();
       }),
       map((val) => val)
