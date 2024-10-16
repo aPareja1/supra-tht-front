@@ -14,7 +14,7 @@
             <p class="text-sm text-gray-600">{{selectedProduct?.description}}</p>
             <div class="mt-2">
               <label for="quantity" class="text-sm">Quantity:</label>
-              <select id="quantity" class="ml-2 border rounded px-2 py-1">
+              <select id="quantity" (change)="setQuantity($event)" class="ml-2 border rounded px-2 py-1">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -26,18 +26,7 @@
         </div>
       </div>
 
-      <div class="w-full md:w-1/4 bg-white p-4 rounded shadow">
-        <h2 class="text-xl font-bold mb-4">Order Summary</h2>
-        <div class="flex justify-between mb-2">
-          <span>Subtotal (3 items):</span>
-          <span class="font-bold">$59.97</span>
-        </div>
-        <div class="text-sm text-green-600">You qualify for FREE Shipping</div>
-
-        <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded mt-4">
-          Proceed to Checkout
-        </button>
-      </div>
+      <app-summary class="w-full h-auto"></app-summary>
     </div>
   </div>
 </body>

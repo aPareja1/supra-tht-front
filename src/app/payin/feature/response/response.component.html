@@ -1,1 +1,29 @@
-<p>response works!</p>
+
+<div class="h-screen ">
+  <nav class="bg-white- p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="flex items-center">
+      <img src="assets/images/supra.svg" width="200px" >
+
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="w-1/2  mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <div class="px-6 py-4">
+      <h2 class="text-xl font-bold text-gray-800">Balance</h2>
+      <div class="mt-4">
+        <a routerLink="/" class="text-blue-500 hover:underline">Volver al inicio</a>
+      </div>
+
+      <ul class="mt-4">
+        <li class="flex justify-between py-2 border-b" *ngFor="let item of balanceInfo">
+          <span>{{item.currency | uppercase}}</span>
+          <span>{{item.amount | currency}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

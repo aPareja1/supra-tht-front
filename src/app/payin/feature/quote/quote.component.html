@@ -1,1 +1,70 @@
-<p>quote works!</p>
+<nav class="bg-white- p-4">
+  <div class="container mx-auto flex items-center justify-between">
+    <div class="flex items-center">
+    <img src="assets/images/supra.svg" width="200px" >
+
+    </div>
+
+  </div>
+</nav>
+<div class="w-1/2 mx-auto mt-10 p-4 bg-white ">
+  <h2 class="text-xl text-center font-bold mb-4">Paga tu factura</h2>
+  <form [formGroup]="quoteForm">
+
+    <div class="flex flex-row gap-4 justify-center align-middle items-center">
+      <p class="w-1/4 text-right">Moneda Cotizada:</p>
+      <mat-form-field appearance="outline" class=" flex flex-col w-full">
+        <input matInput formControlName="initialCurrency"  />
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-row gap-4 justify-center align-middle items-center">
+      <p class="w-1/4 text-right">Monto Cotizado:</p>
+      <mat-form-field appearance="outline" class=" flex flex-col w-full">
+        <input matInput formControlName="finalCurrency"  />
+      </mat-form-field>
+    </div>
+
+
+    <div class="flex flex-row gap-4 justify-center align-middle items-center">
+      <p class="w-1/4 text-right">Costo Transacción:</p>
+      <mat-form-field appearance="outline" class=" flex flex-col w-full">
+        <input matInput formControlName="transactionCost"  />
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-row gap-4 justify-center align-middle items-center">
+      <p class="w-1/4 text-right">Total Divisas a comprar:</p>
+      <mat-form-field appearance="outline" class=" flex flex-col w-full">
+        <input matInput formControlName="finalAmount"  />
+      </mat-form-field>
+    </div>
+    <div class="flex flex-row gap-4 justify-center align-middle items-center">
+      <p class="w-1/4 text-right">Tasa de cambio:</p>
+      <mat-form-field appearance="outline" class=" flex flex-col w-full">
+        <input matInput formControlName="exchangeRate"  />
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-row gap-4 justify-center align-middle items-center">
+      <p class="w-1/4 text-right">Monto total en Pesos Colombianos a Debitar:</p>
+      <mat-form-field appearance="outline" class=" flex flex-col w-full">
+        <input matInput formControlName="initialAmount"  />
+      </mat-form-field>
+    </div>
+
+
+    <p class="text-center" *ngIf="!expired">Tasa de cambio disponible por {{timeLeft}} Segundos</p>
+    <p class="text-center" *ngIf="expired">Tasa de cambio expirada, obtenga una nueva</p>
+
+    <div class="w-full mt-4 flex flex-row gap-10 items-center justify-center">
+      <button (click)="startPayment()" mat-raised-button color="primary" type="submit" class=" w-1/4" [disabled]="expired">
+        Pagar
+      </button>
+      <button (click)="loadQuote()" mat-raised-button color="primary" type="submit" class=" w-1/4">
+        Obtener Tasas
+      </button>
+    </div>
+
+  </form>
+</div>
