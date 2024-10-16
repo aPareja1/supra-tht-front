@@ -1,0 +1,47 @@
+<body class="bg-gray-100 h-lvh">
+  <div class="max-w-full mx-auto">
+    <header class="flex items-center justify-between bg-[#131921] p-4 shadow">
+      <img src="assets/images/amazon.png" alt="amazon-logo" class="max-w-28">
+      <div class="text-lg text-white font-bold">Shopping Cart</div>
+      <a href="#" class="text-blue-500 hover:underline">Continue Shopping</a>
+    </header>
+    <div class="flex flex-col md:flex-row mt-6 space-y-6 md:space-y-0 md:space-x-6">
+      <div class="w-full md:w-3/4 bg-white p-4 rounded shadow">
+        <h2 class="text-2xl font-bold mb-4">Your Items</h2>
+        <div class="flex items-center border-b py-4">
+          <img class="w-24 h-24 object-cover" src="https://via.placeholder.com/150" alt="Product Image">
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold">Product Name</h3>
+            <p class="text-sm text-gray-600">Brand, Color, Size</p>
+            <div class="mt-2">
+              <label for="quantity" class="text-sm">Qty:</label>
+              <select id="quantity" class="ml-2 border rounded px-2 py-1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+            <div class="mt-2">
+              <a href="#" class="text-blue-500 hover:underline">Delete</a>
+              <a href="#" class="text-blue-500 hover:underline ml-4">Save for Later</a>
+            </div>
+          </div>
+          <div class="ml-auto font-bold text-lg">$19.99</div>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/4 bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+        <div class="flex justify-between mb-2">
+          <span>Subtotal (3 items):</span>
+          <span class="font-bold">$59.97</span>
+        </div>
+        <div class="text-sm text-green-600">You qualify for FREE Shipping</div>
+
+        <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded mt-4">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
