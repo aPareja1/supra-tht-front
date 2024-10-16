@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { PaymentService } from '../services/payment.service';
 import { CurrencyBalanceDTO, PaymentInfoDTO } from '../domain/payment-info.dto';
 

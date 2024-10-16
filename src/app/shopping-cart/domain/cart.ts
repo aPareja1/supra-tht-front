@@ -1,7 +1,5 @@
-import { uuid } from "uuidv4";
 import { AggregateRoot } from "../../core/domain/AggregateRoot";
 import { Product } from "./product";
-import { v4 as uuidv4 } from 'uuid';
 import { AfterCartCreated } from '../subscribers/afterCartCreated';
 
 

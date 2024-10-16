@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CreateQuoteDto } from '../domain/create-quote.dto';
-import { QuoteDTO } from '../domain/quote.dto';
 import { firstValueFrom } from 'rxjs';
 import { PaymentRequestDTO } from '../domain/payment-request.dto';
 import { PaymentResponseDto } from '../domain/payment-response.dto';
 import { CurrencyBalanceDTO, PaymentInfoDTO } from '../domain/payment-info.dto';
+import { environment } from '../../../environments/environment';
 
 
 
@@ -18,9 +17,9 @@ export class PaymentService {
    }
 
    startPayment(paymentRequest: PaymentRequestDTO): Promise<PaymentResponseDto> {
-    return firstValueFrom(this.httpService.post<PaymentResponseDto>('http://localhost:3000/payment', paymentRequest));
+    return firstValueFrom(this.httpService.post<PaymentResponseDto>(`${environment.BACKEND_URL}/payment`, paymentRequest));
   }
   getPaymentInfo(id: string): Promise<{payment: PaymentInfoDTO, balance: CurrencyBalanceDTO[]}>{
-    return firstValueFrom(this.httpService.get<{payment: PaymentInfoDTO, balance: CurrencyBalanceDTO[]}>(`http://localhost:3000/payment/${id}`));
+    return firstValueFrom(this.httpService.get<{payment: PaymentInfoDTO, balance: CurrencyBalanceDTO[]}>(`${environment.BACKEND_URL}/payment/${id}`));
   }
 }

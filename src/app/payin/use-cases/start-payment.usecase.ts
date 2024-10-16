@@ -1,9 +1,4 @@
 import { Injectable } from '@angular/core';
-import { QuoteService } from '../services/quote.service';
-import { Observable } from 'rxjs';
-import { QuoteDTO } from '../domain/quote.dto';
-import { CreateQuoteDto } from '../domain/create-quote.dto';
-
 import { PaymentRequestDTO } from '../domain/payment-request.dto';
 import { PaymentService } from '../services/payment.service';
 import { saveObjectAsBase64 } from '../../shared/utils';
